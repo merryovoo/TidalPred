@@ -1,8 +1,12 @@
-该项目包含三个核心脚本及其对应的测试数据，各组件功能如下：
-1. LSTM-withBO.py
-   该脚本采用贝叶斯优化（Bayesian Optimization）方法，针对当前训练集自动搜索LSTM模型的最优超参数组合。在确定最优超参数后，构建并训练模型，进而对后续待预测数据进行预测。配套测试数据为 LSTM-withBO测试数据.csv，用于验证该流程的完整性和有效性。
-2. DALSTM-findBestTrain.py
-   旨在优化模型训练阶段的输入长度。该脚本通过系统评估不同训练集长度下的模型预测性能（如RMSE、MAE等指标）与计算效率，自动确定最优训练窗口长度，以实现精度与效率的平衡。配套测试数据为 DALSTM-findBestTrain测试数据。
-3. DALSTM-findBestTest.py
-   针对预测阶段的长度优化问题，引入滑动窗口机制，并结合贝叶斯优化算法，动态搜索在当前训练模型下最优的预测步长。该策略有助于提升模型在实际应用中的适应性与预测稳定性。配套测试数据为 DALSTM-findBestTest测试数据.csv。
-三个脚本分别对应模型超参数优化、训练长度选择和预测长度优化三个关键环节，共同构成一套完整的动态自适应LSTM建模与预测框架。
+This project comprises three core scripts along with their corresponding test datasets, with each component serving the following functions:
+
+1.LSTM-withBO.py
+This script employs Bayesian Optimization to automatically search for the optimal hyperparameter combination of the LSTM model based on the current training set. After determining the best hyperparameters, it constructs and trains the model, then proceeds to predict subsequent data. The accompanying test data, LSTM-withBO-testData.csv, is used to validate the completeness and effectiveness of this pipeline.
+
+2.DALSTM-findBestTrain.py
+Designed to optimize the input length during the model training phase. This script systematically evaluates model prediction performance (using metrics such as RMSE and MAE) and computational efficiency across different training set lengths, automatically determining the optimal training window size to achieve a balance between accuracy and efficiency. The accompanying test data is DALSTM-findBestTrain-testData.
+
+3.DALSTM-findBestTest.py
+Addressing the length optimization in the prediction phase, this script introduces a sliding window mechanism combined with Bayesian Optimization to dynamically search for the optimal prediction step length under the current trained model. This strategy helps enhance the model's adaptability and prediction stability in practical applications. The accompanying test data is DALSTM-findBestTest-testData.csv.
+
+These three scripts respectively correspond to three critical aspects: model hyperparameter optimization, training length selection, and prediction length optimization. Together, they form a comprehensive dynamic adaptive LSTM modeling and prediction framework.
