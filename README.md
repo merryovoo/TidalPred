@@ -18,11 +18,13 @@ Through this guide, you will learn how to properly configure parameters, run the
 **1.1 Parameter Configuration Instructions**
 
 **1.1.1 Data Path Configuration (Required)**
+
 Modification Location: Line 40
 Description: Replace the default data path with the path to your actual dataset.
 ·Using Test Data: You can directly set it as dataFilePath = 'LSTM-withBO-testData.csv'. Ensure this test data file is placed in the same directory as the program file for correct reading.
 ·Using Custom Data: Ensure the path is accurate (supports both absolute and relative paths).
 **1.1.2 Training Set Length Setting (Adjust as Needed)**
+
 Modification Location: Line 48 and Line 327 (These two parameters must be consistent).
 Description: Each run supports testing only a single training set length. To test multiple lengths, run the program in separate batches:
 ·First run: Set both parameters to 7 (7-day training set).
