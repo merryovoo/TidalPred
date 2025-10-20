@@ -12,6 +12,7 @@ This document provides a detailed introduction to the usage of three core Python
 LSTM-withBO.py - an LSTM model based on Bayesian optimization; DALSTM-findBestTest.py - a DALSTM model (exploring the optimal prediction length); DALSTM-findBestTrain.py - a DALSTM model (analyzing the optimal training set length).
 It is recommended to execute the scripts in the following order: First, run LSTM-withBO.py; Then, execute DALSTM-findBestTest.py; Finally, use DALSTM-findBestTrain.py.
 Through this guide, you will learn how to properly configure parameters, run the programs, and interpret the experimental results.
+
 **1.LSTM-withBO.py Usage Instructions**
 **1.1 Parameter Configuration Instructions*s*
 **1.1.1 Data Path Configuration (Required)**
