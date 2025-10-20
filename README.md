@@ -14,6 +14,7 @@ It is recommended to execute the scripts in the following order: First, run LSTM
 Through this guide, you will learn how to properly configure parameters, run the programs, and interpret the experimental results.
 
 **1.LSTM-withBO.py Usage Instructions**
+
 **1.1 Parameter Configuration Instructions*s*
 **1.1.1 Data Path Configuration (Required)**
 Modification Location: Line 40
