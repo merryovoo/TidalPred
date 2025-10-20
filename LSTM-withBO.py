@@ -37,7 +37,8 @@ def custom_parser(x):
     return pd.to_datetime(x, format='%Y%m%d%H', errors='coerce')
 
 
-dataFilePath = 'LSTM-withBO-testData.csv'
+
+
 data = pd.read_csv(dataFilePath, index_col=0, parse_dates=['Date'])
 if data is None:
     raise ValueError(f"数据读取失败，请检查文件路径：{dataFilePath}")
@@ -61,7 +62,7 @@ y = int(len(df_test) / 1440)
 print(f'测试集的长度是：{len(df_test)},相当于{y}天')
 
 # 创建文件夹路径
-folder_path = f'E:/PythonJieGuo/姚安7天/{x}天-{v}天-{y}天'
+folder_path = f'E:/PythonJieGuo/yaoan/{x}-{v}-{y}'
 if not os.path.exists(folder_path):
     os.makedirs(folder_path)
 
@@ -204,7 +205,7 @@ def objective(space):
         raise ValueError("模型构建失败，返回值为 None")
        # 定义自定义早停回调
     custom_early_stopping = CustomEarlyStopping(patience=StopPatience, pq_alpha_threshold=10, progress_period=20)
-    #PQ_alpha 的阈值 α 被设置为 10。这个值是一个经验值，适用于大多数情况
+
     # 训练模型
     history = model.fit(train_x, train_y, epochs=300, batch_size=int(space['batch_size']),
                         verbose=1, validation_data=(val_x, val_y), callbacks=[custom_early_stopping])
@@ -298,8 +299,8 @@ def get_best_params(best):
 
 best_params = get_best_params(best)
 print("最佳超参数:", best_params)
-# best_actual_epochs=350
-# best_params={'layers_config': {'num_layers': 1, 'lstm_units': [128]}, 'learning_rate': np.float64(0.0001985828801432), 'batch_size': 64, 'l2_reg': np.float64(0.0000103206089863), 'activation': 'tanh', 'optimizer': 'adam'}
+
+
 with open("../best_params_and_epochs.txt", "w") as f:
     f.write("# 贝叶斯优化结果\n\n")
     f.write("## 最佳超参数\n\n")
@@ -336,7 +337,7 @@ for i in range(1, 8, 1):
     v = np.round(len(df_val) / 1440, 1)
     y = int(len(df_test) / 1440)
 
-    folder_path = f'E:/PythonJieGuo/姚安7天/{x}天-{v}天-{y}天'
+    folder_path = f'E:/PythonJieGuo/yaoan/{x}-{v}-{y}'
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
@@ -465,5 +466,5 @@ for i in range(1, 8, 1):
         "平均绝对百分比误差 (MAPE)_train": [mape_train],
     }
     df1 = pd.DataFrame(data1)
-    df1.to_csv('metics姚安7天.csv', mode='a', header=False, index=False)
+    df1.to_csv('metics.csv', mode='a', header=False, index=False)
     print("写入成功")

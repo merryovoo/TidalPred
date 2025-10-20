@@ -202,7 +202,7 @@ def determine_optimal_prediction_length(initial_train_data, complete_dataset, ma
 
         # 构建并训练模型
         model = build_model(best_hparams, (train_x.shape[1], train_x.shape[2]))
-        model.fit(train_x, train_y, epochs=30, batch_size=best_hparams['batch_size'], verbose=0)
+        model.fit(train_x, train_y, epochs=300, batch_size=best_hparams['batch_size'], verbose=0)
 
         # 预测接下来的n天数据
         predictions = []
