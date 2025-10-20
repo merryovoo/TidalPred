@@ -15,7 +15,8 @@ Through this guide, you will learn how to properly configure parameters, run the
 
 **1.LSTM-withBO.py Usage Instructions**
 
-**1.1 Parameter Configuration Instructions*s*
+**1.1 Parameter Configuration Instructions**
+
 **1.1.1 Data Path Configuration (Required)**
 Modification Location: Line 40
 Description: Replace the default data path with the path to your actual dataset.
